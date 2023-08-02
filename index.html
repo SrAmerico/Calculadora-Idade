@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Idade</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <h1>Calculadora de Idade</h1>
+        <section>
+            <h2>Cadastro de informações</h2>
+
+            <form onsubmit="calcular(event)" method="post">
+                
+                <div class="campo-form">
+                    <label for="nome">Digite o Nome:</label>
+                    <input required type="text" name="campo-nome" id="nome" placeholder="Insira o Nome" >
+                </div>
+                
+                <div class="campo-form">
+                    <label for="ano">Ano de Nascimento:</label>
+                    <input required type="number" name="campo-ano" id="ano" min="1900" max="2023" placeholder="Insira seu ano de nascimento" >
+                </div>
+
+                <div class="campo-form">
+                    <label for="mes">Mes de Nascimento:</label>
+                    <input required type="number" name="campo-mes" id="mes" step="1" min="1" max="12"
+                        placeholder="Insira o mes do seu nascimento no formato decimal" >
+                </div>
+
+                <div class="campo-form">
+                    <label for="dia">Dia de Nascimento: </label>
+                    <input required type="number" name="dia" id="dia"  min="1" max="31"
+                        placeholder="Insira o dia do seu nascimento no formato decimal" >
+                </div>
+
+                <div class="conjunto-botoes">
+                    <button type="reset">Limpar Formulário</button>
+                    <button type="submit">Calcular</button>
+                </div>
+
+            </form>
+        </section>
+        <section>
+            <h2>Usuários Cadastrados</h2>
+            <table>
+                <caption>Tabela de Usuarios</caption>
+                <thead>
+                    <tr>
+                        <th>Nome:</th>
+                        <th>Data de Nascimento:</th>
+                        <th>Idade:</th>
+                        <th>Faixa Etaria:</th>
+                    </tr>
+                </thead>
+                <tbody id="corpo-tabela">
+                </tbody>
+            </table>
+            <button onclick="deletarRegistros()" class="botao-tabela">Limpar Registros</button>
+        </section>
+    </main>
+</body>
+
+</html>
